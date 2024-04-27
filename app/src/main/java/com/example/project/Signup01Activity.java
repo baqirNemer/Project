@@ -16,8 +16,7 @@ public class Signup01Activity extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Signup01Activity.this, LoginActivity.class);
-                startActivity(intent);
+                finish();
             }
         });
 
@@ -29,7 +28,5 @@ public class Signup01Activity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
     }
 }

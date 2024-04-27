@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
 
-
 public class HomePage extends AppCompatActivity {
 
     private ImageView menuButton;
@@ -36,7 +35,6 @@ public class HomePage extends AppCompatActivity {
             }
         });
     }
-
     private void showMenuPopup() {
         PopupMenu popupMenu01 = new PopupMenu(HomePage.this, menuButton);
         popupMenu01.getMenuInflater().inflate(R.menu.menu_items, popupMenu01.getMenu());

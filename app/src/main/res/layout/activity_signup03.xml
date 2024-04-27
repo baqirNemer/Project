@@ -61,7 +61,7 @@
         android:id="@+id/districtEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/districtLabelTextView"
+        android:layout_below="@+id/districtLabelTextView"
         android:hint="."
         android:inputType="text"
         android:minHeight="50dp"
@@ -72,7 +72,7 @@
         android:id="@+id/cityLabelTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/districtEditText"
+        android:layout_below="@+id/districtEditText"
         android:text="City"
         android:textColor="@color/white"
         android:layout_marginTop="16dp"/>
@@ -81,7 +81,7 @@
         android:id="@+id/cityEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/cityLabelTextView"
+        android:layout_below="@+id/cityLabelTextView"
         android:hint="."
         android:inputType="text"
         android:minHeight="50dp"
@@ -92,7 +92,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/cityLabelTextView"
+        android:layout_below="@+id/cityLabelTextView"
         android:layout_marginTop="168dp"
         android:orientation="horizontal">
 

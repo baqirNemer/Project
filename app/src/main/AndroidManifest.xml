@@ -22,11 +22,15 @@
             </intent-filter>
         </activity>
         <activity android:name=".HomePage" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity"/>
         <activity android:name=".Signup01Activity" />
         <activity android:name=".Signup02Activity" />
         <activity android:name=".Signup03Activity" />
-
+        <activity android:name=".UserProfile" />
+        <activity android:name=".EditProfile" />
+        <activity android:name=".RecordCardPage" />
+        <activity android:name=".HospitalProfile" />
+        <activity android:name=".DoctorProfile" />
     </application>
 
 </manifest>
