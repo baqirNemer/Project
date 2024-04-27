@@ -7,25 +7,25 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Signup02Activity extends AppCompatActivity {
+public class RecordCardPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_signup02);
+        setContentView(R.layout.record_card_page);
 
-        TextView backButton = findViewById(R.id.backButton);
-        backButton.setOnClickListener(new View.OnClickListener() {
+        TextView hospitalProfile = findViewById(R.id.Hospital);
+        hospitalProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Signup02Activity.this, Signup01Activity.class);
+                Intent intent = new Intent(RecordCardPage.this, HospitalProfile.class);
                 startActivity(intent);
             }
         });
 
-        TextView continueButton = findViewById(R.id.continueButton);
-        continueButton.setOnClickListener(new View.OnClickListener() {
+        TextView doctorProfile = findViewById(R.id.Doctor);
+        doctorProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Signup02Activity.this, Signup03Activity.class);
+                Intent intent = new Intent(RecordCardPage.this, DoctorProfile.class);
                 startActivity(intent);
             }
         });

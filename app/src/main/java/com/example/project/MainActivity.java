@@ -2,6 +2,8 @@ package com.example.project;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -44,8 +46,8 @@ public class MainActivity extends AppCompatActivity {
             public boolean onMenuItemClick(MenuItem item) {
                 // Handle menu item clicks
                 if (item.getItemId() == R.id.Profile) {
-                    // Handle About item click
-                    // Add your code here
+                    Intent intent = new Intent(MainActivity.this, UserProfile.class);
+                    startActivity(intent);
                     return true;
                 } else if (item.getItemId() == R.id.Settings) {
                     // Handle Learn item click
