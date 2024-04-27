@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomePage">
+
+    <!-- Navigation Bar -->
+    <LinearLayout
+        android:id="@+id/navigationBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Menu Button (ImageView) -->
+        <ImageView
+            android:id="@+id/menuButton"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:src="@drawable/menu"
+            android:contentDescription="menu_icon_description"
+            android:padding="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackgroundBorderless"/>
+
+        <!-- Space for Padding -->
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+
+
+        <!-- Profile Icon (ImageView) -->
+        <ImageView
+            android:id="@+id/profileIcon"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:src="@drawable/profile"
+            android:contentDescription="menu_icon_description"
+            android:padding="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackgroundBorderless"/>
+
+    </LinearLayout>
+
+    <!-- Hero Section -->
+    <LinearLayout
+        android:id="@+id/HeroSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/navigationBar">
+
+        <ImageView
+            android:id="@+id/hero"
+            android:layout_width="wrap_content"
+            android:layout_height="232dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="1dp"
+            android:src="@drawable/h1" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

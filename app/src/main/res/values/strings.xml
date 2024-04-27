@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Project</string>
+    <string name="profile_icon_description">\n</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
