@@ -1,49 +1,42 @@
 package com.example.project;
 
+import android.os.Bundle;
+
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentPagerAdapter;
-import java.util.ArrayList;
-import java.util.List;
+import androidx.fragment.app.FragmentActivity;
+import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-public class PagerAdapter extends FragmentPagerAdapter {
-
-    private static final int NUM_TABS = 2; // Number of tabs
-
-    public PagerAdapter(FragmentManager fm) {
-        super(fm);
+public class PagerAdapter extends FragmentStateAdapter {
+    private static final int NUM_TABS = 2;
+    public PagerAdapter(@NonNull FragmentActivity fragmentActivity) {
+        super(fragmentActivity);
     }
 
     @NonNull
     @Override
-    public Fragment getItem(int position) {
-        // Return the Fragment for each tab
-        switch (position) {
+    public Fragment createFragment(int position) {
+        switch(position){
             case 0:
-                return new RecordsFragment(); // Fragment for the first tab
+                RecordsFragment records = new RecordsFragment();
+                records.setArguments(getArgumentsWithPatient());
+                return records;
             case 1:
-                return new ReservationsFragment(); // Fragment for the second tab
-            default:
-                return null;
+                ReservationsFragment reservations = new ReservationsFragment();
+                reservations.setArguments(getArgumentsWithPatient());
+                return reservations;
+            default: return new RecordsFragment();
         }
     }
 
     @Override
-    public int getCount() {
-        return NUM_TABS; // Number of tabs
+    public int getItemCount() {
+        return NUM_TABS;
     }
 
-    @Override
-    public CharSequence getPageTitle(int position) {
-        // Set tab titles
-        switch (position) {
-            case 0:
-                return "Records";
-            case 1:
-                return "Reservations";
-            default:
-                return null;
-        }
+    private Bundle getArgumentsWithPatient() {
+        Bundle bundle = new Bundle();
+        bundle.putString("USERID", MainActivity.userID);
+        return bundle;
     }
 }

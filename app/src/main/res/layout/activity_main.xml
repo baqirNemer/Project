@@ -12,7 +12,6 @@
         android:orientation="horizontal"
         app:layout_constraintTop_toTopOf="parent">
 
-        <!-- Menu Button (ImageView) -->
         <ImageView
             android:id="@+id/menuButton"
             android:layout_width="50dp"
@@ -24,15 +23,12 @@
             android:focusable="true"
             android:background="?attr/selectableItemBackgroundBorderless"/>
 
-        <!-- Space for Padding -->
+
         <View
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_weight="1"/>
 
-
-
-        <!-- Profile Icon (ImageView) -->
         <ImageView
             android:id="@+id/profileIcon"
             android:layout_width="50dp"
@@ -47,19 +43,31 @@
     </LinearLayout>
 
     <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabLayout"
+        android:id="@+id/tabs"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="#19B0B8"
         app:tabTextColor="@color/white"
         android:minHeight="?attr/actionBarSize"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        android:layout_below="@id/navigationBar"/>
+        android:layout_below="@id/navigationBar">
 
-    <androidx.viewpager.widget.ViewPager
+        <com.google.android.material.tabs.TabItem
+            android:text="Records"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <com.google.android.material.tabs.TabItem
+            android:text="Reservations"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/tabLayout"/>
+        android:layout_below="@id/tabs"/>
 
 </RelativeLayout>
