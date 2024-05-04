@@ -93,6 +93,7 @@ public class UserProfile extends AppCompatActivity {
                     }
                 }
             }
+
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
                 Log.e(TAG, "Database error: " + databaseError.getMessage());
@@ -117,6 +118,7 @@ public class UserProfile extends AppCompatActivity {
                 Log.e("Error", "Failed to decode bitmap from file: " + profilePicturePath);
             }
         }
+
         profileImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -52,6 +52,7 @@ public class RecordCardPage extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         doctor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,6 +61,7 @@ public class RecordCardPage extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         share.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,6 +72,7 @@ public class RecordCardPage extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         download.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -79,6 +82,7 @@ public class RecordCardPage extends AppCompatActivity {
             }
         });
     }
+
     private void createNotificationChannel() {
         CharSequence name = "Download Channel";
         String description = "Channel for download notifications";

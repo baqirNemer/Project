@@ -85,6 +85,7 @@ public class LoginActivity extends AppCompatActivity {
                         }
                         Toast.makeText(LoginActivity.this, "Invalid email or password.", Toast.LENGTH_LONG).show();
                     }
+
                     @Override
                     public void onCancelled(@NonNull DatabaseError databaseError) {
                         Log.e(TAG, "Database error: " + databaseError.getMessage());
