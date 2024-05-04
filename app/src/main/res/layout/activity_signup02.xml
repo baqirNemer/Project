@@ -37,60 +37,53 @@
         android:text="Role"
         android:textColor="@color/white" />
 
-    <EditText
-        android:id="@+id/roleEditText"
+    <Spinner
+        android:id="@+id/roleSpinner"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_below="@+id/roleLabelTextView"
-        android:inputType="text"
-        android:minHeight="50dp"
-        android:background="@color/white"
-        android:layout_marginTop="8dp"/>
+        android:layout_marginTop="16dp"
+        android:background="@android:color/white" />
 
     <TextView
         android:id="@+id/sexLabelTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/roleEditText"
+        android:layout_below="@+id/roleSpinner"
         android:text="Sex"
         android:textColor="@color/white"
         android:layout_marginTop="16dp"/>
 
-    <EditText
-        android:id="@+id/sexEditText"
+    <Spinner
+        android:id="@+id/sexSpinner"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_below="@+id/sexLabelTextView"
-        android:inputType="text"
-        android:minHeight="50dp"
-        android:background="@color/white"
-        android:layout_marginTop="8dp"/>
+        android:layout_marginTop="16dp"
+        android:background="@android:color/white" />
 
     <TextView
         android:id="@+id/bloodTypeLabelTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/sexEditText"
+        android:layout_below="@+id/sexSpinner"
         android:text="Blood Type"
         android:textColor="@color/white"
         android:layout_marginTop="16dp"/>
 
-    <EditText
-        android:id="@+id/bloodTypeEditText"
+    <Spinner
+        android:id="@+id/bloodTypeSpinner"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_below="@+id/bloodTypeLabelTextView"
-        android:inputType="text"
-        android:minHeight="50dp"
-        android:background="@color/white"
-        android:layout_marginTop="8dp"/>
-
+        android:layout_marginTop="16dp"
+        android:background="@android:color/white" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/bloodTypeLabelTextView"
-        android:layout_marginTop="168dp"
+        android:layout_marginTop="144dp"
         android:orientation="horizontal">
 
         <Button

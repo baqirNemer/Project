@@ -5,6 +5,7 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -15,19 +16,26 @@ import com.google.android.material.tabs.TabLayout;
 public class MainActivity extends AppCompatActivity {
     private ImageView profileButton;
     private TabLayout tabs;
-    //public static User user;
     public static String userID;
     private ViewPager2 viewPager2;
+    private DatabaseHandler dbHandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        dbHandler = new DatabaseHandler(this);
+
         Intent intent = getIntent();
         if (intent != null && intent.hasExtra("USERID")) {
-            //user = (User) intent.getSerializableExtra("USER");
             userID = intent.getStringExtra("USERID");
+        }
+
+        logUserProfilePicturePath(userID);
+
+        if (!dbHandler.isUserIDExists(userID)) {
+            dbHandler.addUser(userID);
         }
 
         Bundle bundle = new Bundle();
@@ -79,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
             public boolean onMenuItemClick(MenuItem item) {
                 if (item.getItemId() == R.id.Profile) {
                     Intent intent = new Intent(MainActivity.this, UserProfile.class);
+                    intent.putExtra("ID", userID);
                     startActivity(intent);
                     return true;
                 } else if (item.getItemId() == R.id.Settings) {
@@ -89,5 +98,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         popupMenu02.show();
+    }
+
+    private void logUserProfilePicturePath(String userID) {
+        String profilePicturePath = dbHandler.getUserProfilePicturePath(userID);
+        Log.d("SQLite", "User ID: " + userID);
+        Log.d("SQLite", "Profile Picture Path: " + profilePicturePath);
     }
 }

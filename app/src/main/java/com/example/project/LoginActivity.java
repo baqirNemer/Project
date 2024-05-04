@@ -1,6 +1,8 @@
 package com.example.project;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -22,6 +24,10 @@ public class LoginActivity extends AppCompatActivity {
     EditText password;
     private DatabaseReference usersRef;
     String TAG;
+    private SharedPreferences sharedPreferences;
+    private static final String PREF_NAME = "MyPrefs";
+    private static final String KEY_EMAIL = "EMAIL";
+    private static final String KEY_PASSWORD = "PASSWORD";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +36,14 @@ public class LoginActivity extends AppCompatActivity {
 
         email = findViewById(R.id.editTextEmail);
         password = findViewById(R.id.editTextPassword);
+
+        sharedPreferences = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
+
+        String savedEmail = sharedPreferences.getString(KEY_EMAIL, "");
+        String savedPassword = sharedPreferences.getString(KEY_PASSWORD, "");
+
+        email.setText(savedEmail);
+        password.setText(savedPassword);
 
         TAG = "Firebase";
 
@@ -56,6 +70,11 @@ public class LoginActivity extends AppCompatActivity {
                             for (DataSnapshot userSnapshot : dataSnapshot.getChildren()) {
                                 User user = userSnapshot.getValue(User.class);
                                 if (user != null && user.getPassword().equals(passwordText)) {
+                                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                                    editor.putString(KEY_EMAIL, emailText);
+                                    editor.putString(KEY_PASSWORD, passwordText);
+                                    editor.apply();
+
                                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                                     String userID = emailText.split("@")[0];
                                     intent.putExtra("USERID", userID);
@@ -66,6 +85,7 @@ public class LoginActivity extends AppCompatActivity {
                         }
                         Toast.makeText(LoginActivity.this, "Invalid email or password.", Toast.LENGTH_LONG).show();
                     }
+
                     @Override
                     public void onCancelled(@NonNull DatabaseError databaseError) {
                         Log.e(TAG, "Database error: " + databaseError.getMessage());

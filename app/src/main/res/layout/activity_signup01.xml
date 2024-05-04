@@ -94,10 +94,29 @@
             android:layout_marginTop="8dp"/>
 
         <TextView
-            android:id="@+id/phoneLabelTextView"
+            android:id="@+id/ageLabelTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/lastNameEditText"
+            android:text="Age"
+            android:textColor="@color/white"
+            android:layout_marginTop="16dp"/>
+
+        <EditText
+            android:id="@+id/ageEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ageLabelTextView"
+            android:inputType="text"
+            android:minHeight="50dp"
+            android:background="@color/white"
+            android:layout_marginTop="8dp"/>
+
+        <TextView
+            android:id="@+id/phoneLabelTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ageEditText"
             android:text="Phone Number"
             android:textColor="@color/white"
             android:layout_marginTop="16dp"/>
@@ -107,7 +126,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/phoneLabelTextView"
-            android:inputType="text"
+            android:inputType="phone"
             android:minHeight="50dp"
             android:background="@color/white"
             android:layout_marginTop="8dp"/>

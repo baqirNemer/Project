@@ -76,6 +76,7 @@ public class HospitalProfile extends AppCompatActivity {
                     }
                 }
             }
+
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
                 Log.e(TAG, "Database error: " + databaseError.getMessage());
