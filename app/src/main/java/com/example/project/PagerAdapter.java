@@ -22,7 +22,7 @@ public class PagerAdapter extends FragmentStateAdapter {
                 records.setArguments(getArgumentsWithPatient());
                 return records;
             case 1:
-                ReservationsFragment reservations = new ReservationsFragment();
+                DrugsFragment reservations = new DrugsFragment();
                 reservations.setArguments(getArgumentsWithPatient());
                 return reservations;
             default: return new RecordsFragment();

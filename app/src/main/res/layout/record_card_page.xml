@@ -95,6 +95,14 @@
             android:textSize="16sp"
             android:textStyle="bold"
             android:layout_marginTop="8dp"/>
+
+        <ImageView
+            android:id="@+id/Download"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:src="@drawable/download"
+            android:contentDescription="Download Record"
+            android:layout_marginTop="8dp"/>
     </LinearLayout>
 
 </RelativeLayout>

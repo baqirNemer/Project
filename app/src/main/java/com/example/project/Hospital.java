@@ -16,7 +16,8 @@ public class Hospital implements Serializable {
 
     }
 
-    public Hospital(String name, String email, String phoneNumber, String description, String imageURL, String location, double longitude, double latitude) {
+    public Hospital(String name, String email, String phoneNumber, String description, String imageURL,
+                    String location, double longitude, double latitude) {
         this.name = name;
         this.email = email;
         this.phoneNumber = phoneNumber;

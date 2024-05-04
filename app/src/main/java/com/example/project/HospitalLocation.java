@@ -33,6 +33,4 @@ public class HospitalLocation extends AppCompatActivity implements OnMapReadyCal
 
         map.moveCamera(CameraUpdateFactory.newLatLngZoom(hospitalLatLng, 10));
     }
-    //33.89771910610594, 35.485726840874705
-    //33.88173730587174, 35.51900738980908
 }

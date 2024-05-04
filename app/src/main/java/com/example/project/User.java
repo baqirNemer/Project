@@ -12,13 +12,15 @@ public class User implements Serializable {
     public String bloodType;
     public String sex;
     public String role;
+    public int age;
     public String picture;
 
     public User() {
 
     }
 
-    public User(String email, String first, String last, String password, String phone, String blood, String sex, String role) {
+    public User(String email, String first, String last, String password,
+                String phone, String blood, String sex, String role, int age) {
         this.email = email;
         this.firstName = first;
         this.lastName = last;
@@ -27,6 +29,7 @@ public class User implements Serializable {
         this.bloodType = blood;
         this.sex = sex;
         this.role = role;
+        this.age = age;
     }
 
     public String getEmail() {
@@ -91,5 +94,21 @@ public class User implements Serializable {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getPicture() {
+        return picture;
+    }
+
+    public void setPicture(String picture) {
+        this.picture = picture;
     }
 }

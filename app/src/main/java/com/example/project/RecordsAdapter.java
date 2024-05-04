@@ -38,14 +38,9 @@ public class RecordsAdapter extends RecyclerView.Adapter<RecordsAdapter.ViewHold
     public void onBindViewHolder(@NonNull RecordsAdapter.ViewHolder holder, int position) {
         Record record = records.get(position);
 
-        //holder.categoryName.setText(record.getCategoryID());
         holder.date.setText(record.getDate());
-        //holder.doctorName.setText(record.getDoctorID());
-        //holder.hospitalName.setText(record.getHospitalID());
-        //holder.userName.setText(record.getUserID());
         fetchHospitalName(record.getHospitalID(), holder.hospitalName);
         fetchDoctorName(record.getDoctorID(), holder.doctorName);
-        //fetchUserName(record.getUserID(), holder.userName);
         fetchCategoryName(record.getCategoryID(), holder.categoryName);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -58,7 +53,6 @@ public class RecordsAdapter extends RecyclerView.Adapter<RecordsAdapter.ViewHold
                 intent.putExtra("DOCTOR", holder.doctorName.getText());
                 intent.putExtra("DATE", holder.date.getText());
                 intent.putExtra("HOSPITAL", holder.hospitalName.getText());
-                //intent.putExtra("HID", record.getHospitalID());
                 intent.putExtra("DID", record.getDoctorID());
                 context.startActivity(intent);
             }
@@ -75,7 +69,6 @@ public class RecordsAdapter extends RecyclerView.Adapter<RecordsAdapter.ViewHold
         TextView date;
         TextView doctorName;
         TextView hospitalName;
-        //TextView userName;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -83,7 +76,6 @@ public class RecordsAdapter extends RecyclerView.Adapter<RecordsAdapter.ViewHold
             date = itemView.findViewById(R.id.Date);
             doctorName = itemView.findViewById(R.id.DoctorName);
             hospitalName = itemView.findViewById(R.id.HospitalName);
-            //userName = itemView.findViewById(R.id.UserName);
         }
     }
 

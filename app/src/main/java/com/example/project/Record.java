@@ -9,7 +9,8 @@ public class Record {
     String date;
     String description;
 
-    public Record(String userID, String categoryID, String hospitalID, String doctorID, String result, String date, String description) {
+    public Record(String userID, String categoryID, String hospitalID, String doctorID, String result,
+                  String date, String description) {
         this.userID = userID;
         this.categoryID = categoryID;
         this.hospitalID = hospitalID;
