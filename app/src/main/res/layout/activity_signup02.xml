@@ -43,7 +43,7 @@
         android:layout_height="48dp"
         android:layout_below="@+id/roleLabelTextView"
         android:layout_marginTop="16dp"
-        android:background="@android:color/white" />
+        android:background="@drawable/rounded_button_white2" />
 
     <TextView
         android:id="@+id/sexLabelTextView"
@@ -60,7 +60,7 @@
         android:layout_height="48dp"
         android:layout_below="@+id/sexLabelTextView"
         android:layout_marginTop="16dp"
-        android:background="@android:color/white" />
+        android:background="@drawable/rounded_button_white2" />
 
     <TextView
         android:id="@+id/bloodTypeLabelTextView"
@@ -77,7 +77,7 @@
         android:layout_height="48dp"
         android:layout_below="@+id/bloodTypeLabelTextView"
         android:layout_marginTop="16dp"
-        android:background="@android:color/white" />
+        android:background="@drawable/rounded_button_white2" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -86,22 +86,30 @@
         android:layout_marginTop="144dp"
         android:orientation="horizontal">
 
-        <Button
+        <TextView
             android:id="@+id/backButton"
             android:layout_width="0dp"
             android:layout_height="60dp"
             android:layout_marginEnd="8dp"
             android:layout_weight="1"
+            android:padding="10dp"
+            android:background="@drawable/rounded_button_cyan"
+            android:textAlignment="center"
+            android:textSize="26dp"
+            android:textColor="#FFFFFF"
             android:text="Back" />
 
-        <Button
+        <TextView
             android:id="@+id/continueButton"
             android:layout_width="0dp"
             android:layout_height="60dp"
             android:layout_marginStart="8dp"
             android:layout_weight="1"
-            android:text="Continue"
-            android:textColor="@color/black" />
+            android:padding="10dp"
+            android:background="@drawable/rounded_button_white"
+            android:textAlignment="center"
+            android:textSize="26dp"
+            android:text="Continue" />
 
     </LinearLayout>
 

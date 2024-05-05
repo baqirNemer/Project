@@ -29,22 +29,13 @@ public class LoginActivity extends AppCompatActivity {
     private static final String PREF_NAME = "MyPrefs";
     private static final String KEY_EMAIL = "EMAIL";
     private static final String KEY_PASSWORD = "PASSWORD";
-    private boolean soundPlayed = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        if (!soundPlayed) {
-            new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    startSoundService();
-                    soundPlayed = true;
-                }
-            }, 3000);
-        }
+
 
         email = findViewById(R.id.editTextEmail);
         password = findViewById(R.id.editTextPassword);
@@ -123,8 +114,5 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
-    private void startSoundService() {
-        Intent intent = new Intent(this, SoundService.class);
-        startService(intent);
-    }
+
 }

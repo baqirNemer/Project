@@ -52,7 +52,7 @@
             android:layout_below="@+id/emailLabelTextView"
             android:inputType="textEmailAddress"
             android:minHeight="50dp"
-            android:background="@color/white"
+            android:background="@drawable/rounded_button_white2"
             android:layout_marginTop="8dp"/>
 
         <TextView
@@ -71,7 +71,7 @@
             android:layout_below="@+id/firstNameLabelTextView"
             android:inputType="text"
             android:minHeight="50dp"
-            android:background="@color/white"
+            android:background="@drawable/rounded_button_white2"
             android:layout_marginTop="8dp"/>
 
         <TextView
@@ -90,7 +90,7 @@
             android:layout_below="@+id/lastNameLabelTextView"
             android:inputType="text"
             android:minHeight="50dp"
-            android:background="@color/white"
+            android:background="@drawable/rounded_button_white2"
             android:layout_marginTop="8dp"/>
 
         <TextView
@@ -107,9 +107,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/ageLabelTextView"
-            android:inputType="number"
+            android:inputType="text"
             android:minHeight="50dp"
-            android:background="@color/white"
+            android:background="@drawable/rounded_button_white2"
             android:layout_marginTop="8dp"/>
 
         <TextView
@@ -128,7 +128,7 @@
             android:layout_below="@+id/phoneLabelTextView"
             android:inputType="phone"
             android:minHeight="50dp"
-            android:background="@color/white"
+            android:background="@drawable/rounded_button_white2"
             android:layout_marginTop="8dp"/>
 
         <TextView
@@ -147,7 +147,7 @@
             android:layout_below="@+id/passwordLabelTextView"
             android:inputType="textPassword"
             android:minHeight="50dp"
-            android:background="@color/white"
+            android:background="@drawable/rounded_button_white2"
             android:layout_marginTop="8dp"/>
 
         <TextView
@@ -167,7 +167,7 @@
             android:layout_marginTop="8dp"
             android:inputType="textPassword"
             android:minHeight="50dp"
-            android:background="@color/white"
+            android:background="@drawable/rounded_button_white2"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <LinearLayout
@@ -177,22 +177,30 @@
             android:layout_marginTop="40dp"
             android:orientation="horizontal">
 
-            <Button
+            <TextView
                 android:id="@+id/backButton"
                 android:layout_width="0dp"
                 android:layout_height="60dp"
                 android:layout_marginEnd="8dp"
                 android:layout_weight="1"
+                android:padding="10dp"
+                android:background="@drawable/rounded_button_cyan"
+                android:textAlignment="center"
+                android:textSize="26dp"
+                android:textColor="#FFFFFF"
                 android:text="Back" />
 
-            <Button
+            <TextView
                 android:id="@+id/continueButton"
                 android:layout_width="0dp"
                 android:layout_height="60dp"
                 android:layout_marginStart="8dp"
                 android:layout_weight="1"
-                android:text="Continue"
-                android:textColor="@color/black" />
+                android:padding="10dp"
+                android:background="@drawable/rounded_button_white"
+                android:textAlignment="center"
+                android:textSize="26dp"
+                android:text="Continue" />
         </LinearLayout>
     </RelativeLayout>
 </ScrollView>

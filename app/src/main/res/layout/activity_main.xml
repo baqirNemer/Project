@@ -14,15 +14,14 @@
 
         <ImageView
             android:id="@+id/menuButton"
-            android:layout_width="50dp"
+            android:layout_width="188dp"
             android:layout_height="50dp"
-            android:src="@drawable/menu"
-            android:contentDescription="menu_icon_description"
-            android:padding="8dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
             android:clickable="true"
+            android:contentDescription="menu_icon_description"
             android:focusable="true"
-            android:background="?attr/selectableItemBackgroundBorderless"/>
-
+            android:padding="8dp"
+            android:src="@drawable/logo_img" />
 
         <View
             android:layout_width="0dp"

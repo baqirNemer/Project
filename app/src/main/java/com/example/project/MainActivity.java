@@ -78,27 +78,42 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+    private void logoutUser() {
+        // Perform logout actions here (e.g., clear session, preferences, etc.)
+
+        // Navigate to LoginActivity to log out
+        Intent intent = new Intent(MainActivity.this, HomePage.class);
+        // Clear back stack and start LoginActivity
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        // Finish current activity
+        finish();
+    }
 
     private void showProfilePopup() {
-        PopupMenu popupMenu02 = new PopupMenu(MainActivity.this, profileButton);
-        popupMenu02.getMenuInflater().inflate(R.menu.profile_items, popupMenu02.getMenu());
-        popupMenu02.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+        PopupMenu popupMenu = new PopupMenu(MainActivity.this, profileButton);
+        popupMenu.getMenuInflater().inflate(R.menu.profile_items, popupMenu.getMenu());
+        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 if (item.getItemId() == R.id.Profile) {
+                    // Open user profile activity
                     Intent intent = new Intent(MainActivity.this, UserProfile.class);
                     intent.putExtra("ID", userID);
                     startActivity(intent);
                     return true;
-                } else if (item.getItemId() == R.id.Settings) {
+                } else if (item.getItemId() == R.id.Logout) {
+                    // Perform logout action
+                    logoutUser();
                     return true;
                 } else {
                     return false;
                 }
             }
         });
-        popupMenu02.show();
+        popupMenu.show();
     }
+
 
     private void logUserProfilePicturePath(String userID) {
         String profilePicturePath = dbHandler.getUserProfilePicturePath(userID);
