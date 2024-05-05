@@ -5,8 +5,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -37,7 +37,7 @@ public class DrugsFragment extends Fragment {
 
         EditText searchEditText = root.findViewById(R.id.searchEditText);
         RecyclerView recyclerView = root.findViewById(R.id.Records);
-        Button search = root.findViewById(R.id.searchButton);
+        TextView search = root.findViewById(R.id.searchButton);
 
         drugAdapter = new DrugAdapter();
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));

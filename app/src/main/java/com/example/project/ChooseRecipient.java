@@ -10,7 +10,6 @@ import android.os.Bundle;
 import android.telephony.SmsManager;
 import android.text.TextUtils;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,7 +26,7 @@ public class ChooseRecipient extends AppCompatActivity {
         String sms = intent.getStringExtra("SMS");
 
         TextView phone = findViewById(R.id.PhoneNumber);
-        Button send = findViewById(R.id.Send);
+        TextView send = findViewById(R.id.Send);
 
         send.setOnClickListener(new View.OnClickListener() {
             @Override
