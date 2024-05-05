@@ -62,9 +62,10 @@ public class DoctorProfile extends AppCompatActivity {
                             String doctorPhoneNumber = doctor.getPhoneNumber();
                             String doctorFirstName = doctor.getFirstName();
                             String doctorLastName = doctor.getLastName();
+                            String doctorImageURL = doctor.getImageURL();
                             int doctorAge = doctor.getAge();
 
-                            //Picasso.get().load("https://aubmc.org.lb/PublishingImages/news/AUBMC%20entrance.jpg").into(profile);
+                            Picasso.get().load(doctorImageURL).into(profile);
                             name.setText(doctorFirstName + " " + doctorLastName);
                             age.setText(Integer.toString(doctorAge));
                             description.setText(doctorDescription);
@@ -118,17 +119,13 @@ public class DoctorProfile extends AppCompatActivity {
         }
     }
 
-    private void sendEmail(String address/*, String subject, String message*/){
+    private void sendEmail(String address){
         Intent emailIntent = new Intent(Intent.ACTION_SEND);
         emailIntent.setType("text/plain");
         emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{address});
-        //emailIntent.putExtra(Intent.EXTRA_SUBJECT, subject);
-        //emailIntent.putExtra(Intent.EXTRA_TEXT, message);
 
         Intent driveIntent = new Intent(Intent.ACTION_SEND);
         driveIntent.setType("text/plain");
-        //driveIntent.putExtra(Intent.EXTRA_SUBJECT, subject);
-        //driveIntent.putExtra(Intent.EXTRA_TEXT, message);
 
         Intent chooserIntent = Intent.createChooser(emailIntent, "Choose app to send email with:");
         chooserIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS, new Intent[]{driveIntent});

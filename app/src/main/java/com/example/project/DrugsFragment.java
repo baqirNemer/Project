@@ -54,23 +54,6 @@ public class DrugsFragment extends Fragment {
             }
         });
 
-        /*searchEditText.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-                String query = editable.toString().trim();
-                Log.e(TAG, query);
-                if (!query.isEmpty()) {
-                    fetchDataFromApi(query);
-                }
-            }
-        });*/
-
         return root;
     }
 

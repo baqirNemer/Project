@@ -2,6 +2,7 @@ package com.example.project;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -94,7 +95,7 @@ public class RecordsAdapter extends RecyclerView.Adapter<RecordsAdapter.ViewHold
             }
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                // Handle error
+                Log.e("Firebase", "Failed to fetch hospital name: " + databaseError.getMessage());
             }
         });
     }
@@ -114,30 +115,10 @@ public class RecordsAdapter extends RecyclerView.Adapter<RecordsAdapter.ViewHold
             }
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                // Handle error
+                Log.e("Firebase", "Failed to fetch doctor name: " + databaseError.getMessage());
             }
         });
     }
-
-    /*private void fetchUserName(String userId, TextView userNameTextView) {
-        DatabaseReference usersRef = FirebaseDatabase.getInstance().getReference("users");
-        usersRef.child(userId).addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if (dataSnapshot.exists()) {
-                    User user = dataSnapshot.getValue(User.class);
-                    if (user != null) {
-                        String userName = user.getFirstName() + " " + user.getLastName();
-                        userNameTextView.setText(userName);
-                    }
-                }
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                // Handle error
-            }
-        });
-    }*/
 
     private void fetchCategoryName(String categoryId, TextView categoryNameTextView) {
         DatabaseReference categoriesRef = FirebaseDatabase.getInstance().getReference("categories");
@@ -154,7 +135,7 @@ public class RecordsAdapter extends RecyclerView.Adapter<RecordsAdapter.ViewHold
             }
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                // Handle error
+                Log.e("Firebase", "Failed to fetch category name: " + databaseError.getMessage());
             }
         });
     }

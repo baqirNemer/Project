@@ -1,9 +1,10 @@
 package com.example.project;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -28,11 +29,22 @@ public class LoginActivity extends AppCompatActivity {
     private static final String PREF_NAME = "MyPrefs";
     private static final String KEY_EMAIL = "EMAIL";
     private static final String KEY_PASSWORD = "PASSWORD";
+    private boolean soundPlayed = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        if (!soundPlayed) {
+            new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    startSoundService();
+                    soundPlayed = true;
+                }
+            }, 3000);
+        }
 
         email = findViewById(R.id.editTextEmail);
         password = findViewById(R.id.editTextPassword);
@@ -110,6 +122,9 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
+    }
+    private void startSoundService() {
+        Intent intent = new Intent(this, SoundService.class);
+        startService(intent);
     }
 }

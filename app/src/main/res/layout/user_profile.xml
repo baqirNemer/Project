@@ -12,7 +12,7 @@
         android:contentDescription="Profile"
         android:scaleType="centerCrop"
         android:clickable="true"
-        android:background="@drawable/circular_placeholder"/>
+        android:background="@drawable/square_placeholder"/>
 
     <LinearLayout
         android:id="@+id/NameAge"
@@ -29,7 +29,7 @@
             android:id="@+id/Name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=""
+            android:text="First Last"
             android:textSize="24sp"
             android:textStyle="bold"/>
 
@@ -37,7 +37,7 @@
             android:id="@+id/Age"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=""
+            android:text="Age"
             android:textSize="20sp"
             android:layout_marginTop="8dp"/>
 
@@ -45,7 +45,7 @@
             android:id="@+id/BloodType"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=""
+            android:text="Blood"
             android:textSize="20sp"
             android:layout_marginTop="8dp"/>
 
@@ -53,7 +53,7 @@
             android:id="@+id/Sex"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=""
+            android:text="Sex"
             android:textSize="20sp"
             android:layout_marginTop="8dp"/>
 
@@ -61,7 +61,7 @@
             android:id="@+id/Email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=""
+            android:text="Email"
             android:textSize="20sp"
             android:layout_marginTop="8dp"/>
 
@@ -69,7 +69,7 @@
             android:id="@+id/PhoneNumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=""
+            android:text="Phone Number"
             android:textSize="20sp"
             android:layout_marginTop="8dp"/>
 

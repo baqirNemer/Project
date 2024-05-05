@@ -102,7 +102,5 @@ public class MainActivity extends AppCompatActivity {
 
     private void logUserProfilePicturePath(String userID) {
         String profilePicturePath = dbHandler.getUserProfilePicturePath(userID);
-        Log.d("SQLite", "User ID: " + userID);
-        Log.d("SQLite", "Profile Picture Path: " + profilePicturePath);
     }
 }

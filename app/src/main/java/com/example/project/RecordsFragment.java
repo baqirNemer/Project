@@ -1,6 +1,7 @@
 package com.example.project;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -77,7 +78,7 @@ public class RecordsFragment extends Fragment {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                // Handle error
+                Log.e("Firebase", "Failed to fetch records: " + databaseError.getMessage());
             }
         });
     }
