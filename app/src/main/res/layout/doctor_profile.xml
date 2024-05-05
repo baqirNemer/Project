@@ -8,9 +8,11 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/profile_picture"
         android:layout_marginTop="8dp"
-        android:contentDescription="Profile"/>
+        android:contentDescription="Profile"
+        android:scaleType="centerCrop"
+        android:clickable="true"
+        android:background="@drawable/square_placeholder"/>
 
     <LinearLayout
         android:id="@+id/Info"

@@ -66,6 +66,11 @@ public class Signup01Activity extends AppCompatActivity {
                     return;
                 }
 
+                if (!emailText.endsWith("@gmail.com")) {
+                    Toast.makeText(Signup01Activity.this, "Please enter a valid Gmail address", Toast.LENGTH_LONG).show();
+                    return;
+                }
+
                 if (!passwordText.equals(confirmText)) {
                     Toast.makeText(Signup01Activity.this, "Passwords do not match", Toast.LENGTH_LONG).show();
                     return;

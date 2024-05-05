@@ -2,10 +2,14 @@ package com.example.project;
 
 import android.Manifest;
 import android.content.ActivityNotFoundException;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -18,6 +22,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -36,6 +41,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Objects;
 
 public class UserProfile extends AppCompatActivity {
     private static final int CAMERA_PERMISSION_REQUEST_CODE = 100;
@@ -43,6 +49,8 @@ public class UserProfile extends AppCompatActivity {
     public static String userID;
     String TAG;
     private DatabaseHandler dbHandler;
+    private ProfileUpdateReceiver profileUpdateReceiver;
+    private static final String ACTIVITY_TAG = "UserProfile";
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.user_profile);
@@ -104,7 +112,33 @@ public class UserProfile extends AppCompatActivity {
                 phone.setText("");
                 blood.setText("");
                 sex.setText("");
+            }
+        });
 
+        ImageView edit = findViewById(R.id.Edit);
+        edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(UserProfile.this, EditProfile.class);
+                String fullName = name.getText().toString();
+                String[] names = fullName.split(" ");
+
+                String firstName = "";
+                String lastName = "";
+                if (names.length > 0) {
+                    firstName = names[0];
+                    if (names.length > 1) {
+                        lastName = names[1];
+                    }
+                }
+                intent.putExtra("ID", userID);
+                intent.putExtra("FIRST", firstName);
+                intent.putExtra("LAST", lastName);
+                intent.putExtra("AGE", age.getText().toString());
+                intent.putExtra("PHONE", phone.getText().toString());
+                intent.putExtra("SEX", sex.getText().toString());
+                intent.putExtra("BLOOD", blood.getText().toString());
+                startActivity(intent);
             }
         });
 
@@ -123,15 +157,6 @@ public class UserProfile extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 dispatchTakePictureIntent();
-            }
-        });
-
-        ImageView editButton = findViewById(R.id.Edit);
-        editButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(UserProfile.this, EditProfile.class);
-                startActivity(intent);
             }
         });
     }
@@ -224,5 +249,24 @@ public class UserProfile extends AppCompatActivity {
 
         faceDetector.release();
         return croppedBitmap;
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.TIRAMISU)
+    @Override
+    protected void onResume() {
+        super.onResume();
+        profileUpdateReceiver = new ProfileUpdateReceiver();
+        IntentFilter filter = new IntentFilter(EditProfile.ACTION_PROFILE_UPDATED);
+        registerReceiver(profileUpdateReceiver, filter, Context.RECEIVER_NOT_EXPORTED);
+        Log.d(ACTIVITY_TAG, "Profile update receiver registered.");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if (profileUpdateReceiver != null) {
+            unregisterReceiver(profileUpdateReceiver);
+            Log.d(ACTIVITY_TAG, "Profile update receiver unregistered.");
+        }
     }
 }

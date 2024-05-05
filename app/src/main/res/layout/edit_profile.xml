@@ -9,71 +9,107 @@
         android:paddingStart="16dp"
         android:paddingEnd="16dp">
         <TextView
-            android:id="@+id/TextName"
+            android:id="@+id/firstNameLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Name"
+            android:text="First Name"
             android:textSize="14sp"
             android:layout_marginTop="16dp"/>
 
         <EditText
-            android:id="@+id/EditName"
+            android:id="@+id/firstNameEditText"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/TextName"
+            android:layout_height="56dp"
+            android:layout_below="@id/firstNameLabel"
             android:layout_marginTop="8dp"
-            android:hint="Enter your name"/>
+            android:inputType="text"
+            android:hint="Enter your first name"/>
 
         <TextView
-            android:id="@+id/TextPhone"
+            android:id="@+id/lastNameLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/firstNameEditText"
+            android:text="Last Name"
+            android:textSize="14sp"
+            android:layout_marginTop="16dp"/>
+
+        <EditText
+            android:id="@+id/lastNameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_below="@id/lastNameLabel"
+            android:layout_marginTop="8dp"
+            android:inputType="text"
+            android:hint="Enter your last name"/>
+
+        <TextView
+            android:id="@+id/ageLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lastNameEditText"
+            android:text="Age"
+            android:textSize="14sp"
+            android:layout_marginTop="16dp"/>
+
+        <EditText
+            android:id="@+id/ageEditText"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_below="@id/ageLabel"
+            android:layout_marginTop="8dp"
+            android:inputType="number"
+            android:hint="Enter your age"/>
+
+        <TextView
+            android:id="@+id/phoneLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Phone Number"
             android:textSize="14sp"
-            android:layout_below="@id/EditName"
+            android:layout_below="@id/ageEditText"
             android:layout_marginTop="16dp"/>
 
         <EditText
-            android:id="@+id/EditPhone"
+            android:id="@+id/phoneEditText"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/TextPhone"
+            android:layout_height="56dp"
+            android:layout_below="@id/phoneLabel"
             android:layout_marginTop="8dp"
+            android:inputType="phone"
             android:hint="Enter your phone number"/>
 
         <TextView
-            android:id="@+id/TextEmail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Email"
-            android:textSize="14sp"
-            android:layout_below="@id/EditPhone"
-            android:layout_marginTop="16dp"/>
-
-        <EditText
-            android:id="@+id/EditEmail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/TextEmail"
-            android:layout_marginTop="8dp"
-            android:hint="Enter your email"/>
-
-        <TextView
-            android:id="@+id/TextBlood"
+            android:id="@+id/bloodTypeLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Blood Type"
             android:textSize="14sp"
-            android:layout_below="@id/EditEmail"
+            android:layout_below="@id/phoneEditText"
             android:layout_marginTop="16dp"/>
 
-        <EditText
-            android:id="@+id/EditBlood"
+        <Spinner
+            android:id="@+id/bloodTypeSpinner"
             android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_below="@id/bloodTypeLabel"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/sexLabel"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/TextBlood"
-            android:layout_marginTop="8dp"
-            android:hint="Enter your blood type"/>
+            android:text="Sex"
+            android:textSize="14sp"
+            android:layout_below="@id/bloodTypeSpinner"
+            android:layout_marginTop="16dp"/>
+
+        <Spinner
+            android:id="@+id/sexSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_below="@id/sexLabel"
+            android:layout_marginTop="8dp" />
 
         <Button
             android:id="@+id/Save"

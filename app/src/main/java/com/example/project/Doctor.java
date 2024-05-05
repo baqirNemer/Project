@@ -10,13 +10,14 @@ public class Doctor implements Serializable {
     String description;
     String hospitalID;
     String email;
+    String imageURL;
 
     public Doctor() {
 
     }
 
     public Doctor(String firstName, String lastName, int age, String phoneNumber, String description,
-                  String hospitalID, String email) {
+                  String hospitalID, String email, String imageURL) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
@@ -24,6 +25,7 @@ public class Doctor implements Serializable {
         this.description = description;
         this.hospitalID = hospitalID;
         this.email = email;
+        this.imageURL = imageURL;
     }
 
     public String getFirstName() {
@@ -80,5 +82,13 @@ public class Doctor implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getImageURL() {
+        return imageURL;
+    }
+
+    public void setImageURL(String imageURL) {
+        this.imageURL = imageURL;
     }
 }

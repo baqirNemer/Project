@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -153,17 +152,13 @@ public class HospitalProfile extends AppCompatActivity {
         }
     }
 
-    private void sendEmail(String address/*, String subject, String message*/){
+    private void sendEmail(String address){
         Intent emailIntent = new Intent(Intent.ACTION_SEND);
         emailIntent.setType("text/plain");
         emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{address});
-        //emailIntent.putExtra(Intent.EXTRA_SUBJECT, subject);
-        //emailIntent.putExtra(Intent.EXTRA_TEXT, message);
 
         Intent driveIntent = new Intent(Intent.ACTION_SEND);
         driveIntent.setType("text/plain");
-        //driveIntent.putExtra(Intent.EXTRA_SUBJECT, subject);
-        //driveIntent.putExtra(Intent.EXTRA_TEXT, message);
 
         Intent chooserIntent = Intent.createChooser(emailIntent, "Choose app to send email with:");
         chooserIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS, new Intent[]{driveIntent});

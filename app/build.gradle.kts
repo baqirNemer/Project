@@ -34,11 +34,6 @@ android {
 }
 
 dependencies {
-    /*implementation("org.mongodb:mongodb-driver-sync:4.4.0"){
-        exclude (group = "javax.naming", module = "javax.naming-api")
-        exclude (group = "javax.activation", module = "activation")
-    }*/
-    //implementation("mysql:mysql-connector-java:8.0.33")
     implementation("com.google.android.gms:play-services-maps:18.2.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.11.0")
