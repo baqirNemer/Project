@@ -11,10 +11,8 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class HomePage extends AppCompatActivity {
-
     private TextView loginText;
     private TextView registerText;
-
     private boolean soundPlayed = false;
 
     @Override
