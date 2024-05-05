@@ -3,7 +3,6 @@
         android:id="@+id/Profile"
         android:title="Profile"/>
     <item
-        android:id="@+id/Settings"
-        android:title="Settings"/>
-
+        android:id="@+id/Logout"
+        android:title="Logout"/>
 </menu>

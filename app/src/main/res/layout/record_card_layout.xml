@@ -13,8 +13,9 @@
     app:contentPadding="8dp">
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_height="177dp"
+        android:background="@drawable/rec_card"
         android:gravity="center">
 
         <TextView
